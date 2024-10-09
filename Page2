@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Information</title>
+  </head>
+  <body>
+    <h1>Enter Your Budget Information</h1>
+
+    <form id="budgetForm" onsubmit="handleBudgetFormSubmit(); return false;">
+      <h3>Pay Stub Contributions</h3>
+
+      <label for="health_care">Health Care:</label><br>
+      <input type="number" id="health_care" name="health_care" step="0.01" value="0"><br><br>
+
+      <label for="dental">Dental:</label><br>
+      <input type="number" id="dental" name="dental" step="0.01" value="0"><br><br>
+
+      <label for="eye">Eye:</label><br>
+      <input type="number" id="eye" name="eye" step="0.01" value="0"><br><br>
+
+      <label for="fsa">FSA:</label><br>
+      <input type="number" id="fsa" name="fsa" step="0.01" value="0"><br><br>
+
+      <label for="hsa">HSA:</label><br>
+      <input type="number" id="hsa" name="hsa" step="0.01" value="0"><br><br>
+
+      <label for="pre_tax_retirement">Pre-Tax Retirement:</label><br>
+      <input type="number" id="pre_tax_retirement" name="pre_tax_retirement" step="0.01" value="0"><br><br>
+
+      <label for="pre_tax_others">Pre-Tax Others:</label><br>
+      <input type="number" id="pre_tax_others" name="pre_tax_others" step="0.01" value="0"><br><br>
+
+      <label for="post_tax_others">Post-Tax Others:</label><br>
+      <input type="number" id="post_tax_others" name="post_tax_others" step="0.01" value="0"><br><br>
+
+      <h3>Essential Expenses</h3>
+      
+      <label for="rent_mortgage">Rent/Mortgage:</label><br>
+      <input type="number" id="rent_mortgage" name="rent_mortgage" step="0.01" value="0"><br><br>
+
+      <label for="rent_mortgage_insurance">Rent/Mortgage Insurance:</label><br>
+      <input type="number" id="rent_mortgage_insurance" name="rent_mortgage_insurance" step="0.01" value="0"><br><br>
+
+      <label for="hoa">HOA:</label><br>
+      <input type="number" id="hoa" name="hoa" step="0.01" value="0"><br><br>
+
+      <label for="electric">Electric:</label><br>
+      <input type="number" id="electric" name="electric" step="0.01" value="0"><br><br>
+
+      <label for="water_sewer">Water/Sewer:</label><br>
+      <input type="number" id="water_sewer" name="water_sewer" step="0.01" value="0"><br><br>
+
+      <label for="gas_heating">Gas/Heating:</label><br>
+      <input type="number" id="gas_heating" name="gas_heating" step="0.01" value="0"><br><br>
+
+      <label for="trash_recycling">Trash/Recycling:</label><br>
+      <input type="number" id="trash_recycling" name="trash_recycling" step="0.01" value="0"><br><br>
+
+      <h3>Transportation</h3>
+
+      <label for="car_payment">Car Payment:</label><br>
+      <input type="number" id="car_payment" name="car_payment" step="0.01" value="0"><br><br>
+
+      <label for="gas_or_public_transportation">Gas or Public Transportation:</label><br>
+      <input type="number" id="gas_or_public_transportation" name="gas_or_public_transportation" step="0.01" value="0"><br><br>
+
+      <label for="vehicle_maintenance">Vehicle Maintenance:</label><br>
+      <input type="number" id="vehicle_maintenance" name="vehicle_maintenance" step="0.01" value="0"><br><br>
+
+      <label for="car_insurance">Car Insurance:</label><br>
+      <input type="number" id="car_insurance" name="car_insurance" step="0.01" value="0"><br><br>
+
+      <h3>Debt Minimum Payments</h3>
+
+      <label for="student_loans">Student Loans:</label><br>
+      <input type="number" id="student_loans" name="student_loans" step="0.01" value="0"><br><br>
+
+      <label for="personal_loans">Personal Loans:</label><br>
+      <input type="number" id="personal_loans" name="personal_loans" step="0.01" value="0"><br><br>
+
+      <label for="credit_card_payments">Credit Card Payments:</label><br>
+      <input type="number" id="credit_card_payments" name="credit_card_payments" step="0.01" value="0"><br><br>
+
+      <label for="other_loan_obligations">Other Loan Obligations:</label><br>
+      <input type="number" id="other_loan_obligations" name="other_loan_obligations" step="0.01" value="0"><br><br>
+
+      <h3>Communication</h3>
+
+      <label for="phone_bill">Phone Bill:</label><br>
+      <input type="number" id="phone_bill" name="phone_bill" step="0.01" value="0"><br><br>
+
+      <label for="phone_payment">Phone Payment:</label><br>
+      <input type="number" id="phone_payment" name="phone_payment" step="0.01" value="0"><br><br>
+
+      <label for="Internet">Internet:</label><br>
+      <input type="number" id="Internet" name="Internet" step="0.01" value="0"><br><br>
+
+      <h3>Other Essentials</h3>
+
+      <label for="groceries">Groceries:</label><br>
+      <input type="number" id="groceries" name="groceries" step="0.01" value="0"><br><br>
+
+      <label for="medical_expenses">Medical Expenses:</label><br>
+      <input type="number" id="medical_expenses" name="medical_expenses" step="0.01" value="0"><br><br>
+
+      <label for="pet_care">Pet Care:</label><br>
+      <input type="number" id="pet_care" name="pet_care" step="0.01" value="0"><br><br>
+
+      <label for="household_supplies">Essential Household Supplies:</label><br>
+      <input type="number" id="household_supplies" name="household_supplies" step="0.01" value="0"><br><br>
+
+      <label for="others_essentials">Other Essentials:</label><br>
+      <input type="number" id="others_essentials" name="others_essentials" step="0.01" value="0"><br><br>
+
+      <h3>Discretionary</h3>
+
+      <label for="dining_out">Dining Out:</label><br>
+      <input type="number" id="dining_out" name="dining_out" step="0.01" value="0"><br><br>
+
+      <label for="movies_events_outings">Movies/Events/Outings:</label><br>
+      <input type="number" id="movies_events_outings" name="movies_events_outings" step="0.01" value="0"><br><br>
+
+      <label for="subscriptions">Subscriptions:</label><br>
+      <input type="number" id="subscriptions" name="subscriptions" step="0.01" value="0"><br><br>
+
+      <label for="hobbies">Hobbies:</label><br>
+      <input type="number" id="hobbies" name="hobbies" step="0.01" value="0"><br><br>
+
+      <label for="other_discretionary">Other Discretionary:</label><br>
+      <input type="number" id="other_discretionary" name="other_discretionary" step="0.01" value="0"><br><br>
+
+      <h3>Other Income/Investments</h3>
+
+      <label for="other_income">Other Income:</label><br>
+      <input type="number" id="other_income" name="other_income" step="0.01" value="0"><br><br>
+
+      <label for="investments">Investments:</label><br>
+      <input type="number" id="investments" name="investments" step="0.01" value="0"><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <h3>Total Monthly Expenses: <span id="totalExpense">$0.00</span></h3>
+
+    <script>
+      function handleBudgetFormSubmit() {
+        // Collect the budget form data
+        const health_care = parseFloat(document.getElementById('health_care').value) || 0;
+        const dental = parseFloat(document.getElementById('dental').value) || 0;
+        const eye = parseFloat(document.getElementById('eye').value) || 0;
+        const fsa = parseFloat(document.getElementById('fsa').value) || 0;
+        const hsa = parseFloat(document.getElementById('hsa').value) || 0;
+        const pre_tax_retirement = parseFloat(document.getElementById('pre_tax_retirement').value) || 0;
+        const pre_tax_others = parseFloat(document.getElementById('pre_tax_others').value) || 0;
+        const post_tax_others = parseFloat(document.getElementById('post_tax_others').value) || 0;
+        const rent_mortgage = parseFloat(document.getElementById('rent_mortgage').value) || 0;
+        const rent_mortgage_insurance = parseFloat(document.getElementById('rent_mortgage_insurance').value) || 0;
+        const hoa = parseFloat(document.getElementById('hoa').value) || 0;
+        const electric = parseFloat(document.getElementById('electric').value) || 0;
+        const water_sewer = parseFloat(document.getElementById('water_sewer').value) || 0;
+        const gas_heating = parseFloat(document.getElementById('gas_heating').value) || 0;
+        const trash_recycling = parseFloat(document.getElementById('trash_recycling').value) || 0;
+        const car_payment = parseFloat(document.getElementById('car_payment').value) || 0;
+        const gas_or_public_transportation = parseFloat(document.getElementById('gas_or_public_transportation').value) || 0;
+        const vehicle_maintenance = parseFloat(document.getElementById('vehicle_maintenance').value) || 0;
+        const car_insurance = parseFloat(document.getElementById('car_insurance').value) || 0;
+        const student_loans = parseFloat(document.getElementById('student_loans').value) || 0;
+        const personal_loans = parseFloat(document.getElementById('personal_loans').value) || 0;
+        const credit_card_payments = parseFloat(document.getElementById('credit_card_payments').value) || 0;
+        const other_loan_obligations = parseFloat(document.getElementById('other_loan_obligations').value) || 0;
+        const phone_bill = parseFloat(document.getElementById('phone_bill').value) || 0;
+        const phone_payment = parseFloat(document.getElementById('phone_payment').value) || 0;
+        const Internet = parseFloat(document.getElementById('Internet').value) || 0;
+        const groceries = parseFloat(document.getElementById('groceries').value) || 0;
+        const medical_expenses = parseFloat(document.getElementById('medical_expenses').value) || 0;
+        const pet_care = parseFloat(document.getElementById('pet_care').value) || 0;
+        const household_supplies = parseFloat(document.getElementById('household_supplies').value) || 0;
+        const others_essentials = parseFloat(document.getElementById('others_essentials').value) || 0;
+        const dining_out = parseFloat(document.getElementById('dining_out').value) || 0;
+        const movies_events_outings = parseFloat(document.getElementById('movies_events_outings').value) || 0;
+        const subscriptions = parseFloat(document.getElementById('subscriptions').value) || 0;
+        const hobbies = parseFloat(document.getElementById('hobbies').value) || 0;
+        const other_discretionary = parseFloat(document.getElementById('other_discretionary').value) || 0;
+        const other_income = parseFloat(document.getElementById('other_income').value) || 0;
+        const investments = parseFloat(document.getElementById('investments').value) || 0;
+
+        // Calculate the total expenses
+        const totalExpense = health_care + dental + eye + fsa + hsa + pre_tax_retirement + pre_tax_others + post_tax_others
+          + rent_mortgage + rent_mortgage_insurance + hoa + electric + water_sewer + gas_heating + trash_recycling
+          + car_payment + gas_or_public_transportation + vehicle_maintenance + car_insurance + student_loans + personal_loans
+          + credit_card_payments + other_loan_obligations + phone_bill + phone_payment + Internet + groceries + medical_expenses
+          + pet_care + household_supplies + others_essentials + dining_out + movies_events_outings + subscriptions + hobbies
+          + other_discretionary;
+
+        // Display the total expense
+        document.getElementById('totalExpense').innerText = `$${totalExpense.toFixed(2)}`;
+
+        // Get data from Page 1 (Income and State)
+        const income = localStorage.getItem('income');
+        const state = localStorage.getItem('state');
+
+        console.log(`Income: $${income}`);
+        console.log(`State: ${state}`);
+      }
+
+      // Optionally, display data from Page 1 on Page 2 when the page loads
+      window.onload = function() {
+        const income = localStorage.getItem('income');
+        const state = localStorage.getItem('state');
+
+        console.log(`You selected income of $${income} in ${state}`);
+      }
+    </script>
+  </body>
+</html>
