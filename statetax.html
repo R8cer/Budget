@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Tax Calculator</title>
+</head>
+<body>
+    <h1>Progressive Tax Calculator</h1>
+
+    <!-- Form to get user input -->
+    <form id="taxForm">
+        <label for="state">Select Your State:</label><br>
+        <select id="state" name="state" required>
+            <option value="california">California</option>
+            <option value="new_york">New York</option>
+            <!-- Add more states here -->
+        </select><br><br>
+
+        <label for="income">Enter Your Income ($):</label><br>
+        <input type="number" id="income" name="income" required><br><br>
+
+        <button type="button" onclick="calculateTax()">Calculate Tax</button>
+    </form>
+
+    <!-- Output -->
+    <h3>Total Tax: <span id="totalTax">$0.00</span></h3>
+
+    <!-- JavaScript Section -->
+    <script>
+        // Function to calculate tax based on income and state
+        async function calculateTax() {
+            const state = document.getElementById('state').value;
+            const income = parseFloat(document.getElementById('income').value);
+
+            // Fetch tax brackets from external JSON file
+            const response = await fetch('tax_brackets.json');
+            const taxBrackets = await response.json();
+
+            const brackets = taxBrackets[state];
+            let totalTax = 0;
+
+            // Loop through each tax bracket for the selected state
+            for (let bracket of brackets) {
+                if (income > bracket.min) {
+                    const taxableIncome = Math.min(income, bracket.max) - bracket.min;
+                    totalTax += taxableIncome * bracket.rate;
+                }
+            }
+
+            // Display the total tax
+            document.getElementById('totalTax').textContent = `$${totalTax.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
